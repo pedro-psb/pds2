@@ -1,4 +1,6 @@
 #include <cstdlib>
+#include <algorithm>
+#include <random>
 #include <ctime>
 #include <iostream>
 #include "../core-simulador-hpp/Simulador.hpp"
@@ -74,16 +76,17 @@ Personagem* Simulador::proximoPersonagem(vector<Personagem*> equipe)
     {
         return nullptr;
     }
-
-    int contador = 0;
-    while (contador < tamanho)
+    int contador = std::rand() % equipe.size();
+    // essa função nao deve ser chamada quando a vida da equipe for 0
+    // senão ficará num loop infinito
+    while (true)
     {
+        std::cout << contador;
         if (equipe[contador]->getVida()>0)
         {
             return equipe[contador];
         }
-        contador++;
-
+        contador = std::rand() % equipe.size();
     }
 
     return nullptr;

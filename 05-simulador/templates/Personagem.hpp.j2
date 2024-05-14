@@ -1,10 +1,10 @@
-#ifndef CHAVES
-#define CHAVES
+#ifndef {{ name | upper | replace(" ","_") }}
+#define {{ name | upper | replace(" ","_") }}
 #include "../core-simulador-hpp/Personagem.hpp"
-class Chaves : public Personagem
+class {{ name | to_class }} : public Personagem
 {
     public:
-        Chaves(int id, string nome, int vida, ArmaAtaque* armaAtaque, ArmaDefesa* armaDefesa);
+        {{ name | to_class }}(int id, string nome, int vida, ArmaAtaque* armaAtaque, ArmaDefesa* armaDefesa);
         int gerarAtaque() override;
         int criarDefesa() override;
         string pegarDescricao() override;

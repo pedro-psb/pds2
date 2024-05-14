@@ -1,17 +1,17 @@
 #include "../core-simulador-hpp/ArmaDefesa.hpp"
-#include "../acessorios-hpp/Escudo.hpp"
+#include "../acessorios-hpp/Panela.hpp"
 
-Escudo::Escudo(string descricaoArma, int resistencia)
+Panela::Panela(string descricaoArma, int resistencia)
 :ArmaDefesa(descricaoArma, resistencia){
 
 }
 
-string Escudo::getDescricaoArma() 
+string Panela::getDescricaoArma() 
 {
     return this->descricaoArma;
 }
 
-int Escudo::getResistencia() 
+int Panela::getResistencia() 
 {
     return this->resistencia;
 }

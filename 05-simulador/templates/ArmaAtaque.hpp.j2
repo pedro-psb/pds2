@@ -1,0 +1,13 @@
+#ifndef {{ name | upper | replace(" ","_") }}
+#define {{ name | upper | replace(" ","_") }}
+
+#include "../core-simulador-hpp/ArmaAtaque.hpp"
+class {{name | to_class}} : public ArmaAtaque
+{
+    public:
+        {{name | to_class}}(string descricaoArma, int minForca, int maxForca);
+        int gerarForcaAtaque() override;
+        string gerarRuidoAtaque() override;
+};
+
+#endif

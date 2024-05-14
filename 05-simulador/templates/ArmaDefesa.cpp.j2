@@ -1,0 +1,17 @@
+#include "../core-simulador-hpp/ArmaDefesa.hpp"
+#include "../acessorios-hpp/{{ name | to_class }}.hpp"
+
+{{ name | to_class }}::{{ name | to_class }}(string descricaoArma, int resistencia)
+:ArmaDefesa(descricaoArma, resistencia){
+
+}
+
+string {{ name | to_class }}::getDescricaoArma() 
+{
+    return this->descricaoArma;
+}
+
+int {{ name | to_class }}::getResistencia() 
+{
+    return this->resistencia;
+}

@@ -1,21 +1,21 @@
-#include "../personagens-hpp/Chaves.hpp"
+#include "../personagens-hpp/{{ name | to_class }}.hpp"
 
-Chaves::Chaves(int id, string nome, int vida, ArmaAtaque* armaAtaque, ArmaDefesa* armaDefesa)
+{{ name | to_class }}::{{ name | to_class }}(int id, string nome, int vida, ArmaAtaque* armaAtaque, ArmaDefesa* armaDefesa)
 :Personagem(id, nome, vida, armaAtaque, armaDefesa){
 
 }
 
-int Chaves::gerarAtaque()
+int {{ name | to_class }}::gerarAtaque()
 {
     return armaAtaque->gerarForcaAtaque();
 }
 
-int Chaves::criarDefesa()
+int {{ name | to_class }}::criarDefesa()
 {
     return armaDefesa->getResistencia();
 }
 
-string Chaves::pegarDescricao() 
+string {{ name | to_class }}::pegarDescricao() 
 {
-    return "Eii, não contava com a minha astucia?";
+    return "{{ frase }}";
 }

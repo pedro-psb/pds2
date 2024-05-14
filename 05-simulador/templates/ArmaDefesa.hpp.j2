@@ -1,13 +1,14 @@
-#ifndef COLHER
-#define COLHER
+#ifndef {{ name | upper | replace(" ","_") }}
+#define {{ name | upper | replace(" ","_") }}
 
 #include "../core-simulador-hpp/ArmaAtaque.hpp"
-class Colher : public ArmaAtaque
+#include "../core-simulador-hpp/ArmaDefesa.hpp"
+class {{ name | to_class }} : public ArmaDefesa
 {
     public:
-        Colher(string descricaoArma, int minForca, int maxForca);
-        int gerarForcaAtaque() override;
-        string gerarRuidoAtaque() override;
+        {{ name | to_class }}(string descricaoArma, int resistencia);
+        string getDescricaoArma() override;
+        int getResistencia() override;
 };
 
 #endif
